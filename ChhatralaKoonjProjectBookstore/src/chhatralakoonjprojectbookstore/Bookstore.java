@@ -81,12 +81,14 @@ public class Bookstore extends Store {
     {
         System.out.print("Enter the number of items you'd like to purchase: ");
         int numPurchases = scnr.nextInt();
+        scnr.nextLine();
         int[] cart = new int[numPurchases];
         
         for (int i = 0; i < numPurchases; i++)
         {
             System.out.print("Enter the ID of item #" + (i + 1) + " you'd like to purchase: ");
             cart[i] = scnr.nextInt();
+            scnr.nextLine();
         }
         
         double totalPrice = 0.0;
@@ -133,6 +135,7 @@ public class Bookstore extends Store {
             }
         }
         System.out.println("Your total price will be: $" + totalPrice + ".");
+        System.out.println();
     }
     
     @Override
@@ -150,8 +153,10 @@ public class Bookstore extends Store {
                 String bookName = scnr.nextLine();
                 System.out.print("Enter the ISBN of the book: ");
                 int bookISBN = scnr.nextInt();
+                scnr.nextLine();
                 System.out.print("Enter the price that you originally purchased the book at (as a decimal): ");
                 double bookPrice = scnr.nextDouble();
+                scnr.nextLine();
                 
                 books.add(new Book(bookName, bookISBN, bookPrice, 1));
                 System.out.println("Thank you for your donation! Your book has been added to our books!");
@@ -162,6 +167,7 @@ public class Bookstore extends Store {
                 String cdName = scnr.nextLine();
                 System.out.print("Enter the price that you originally purchased the CD at (as a decimal): ");
                 double cdPrice = scnr.nextDouble();
+                scnr.nextLine();
                 
                 CDs.add(new CD(cdName, cdPrice, 1));
                 System.out.println("Thank you for your donation! Your CD has been added to our CDs!");
@@ -172,6 +178,7 @@ public class Bookstore extends Store {
                 String dvdName = scnr.nextLine();
                 System.out.print("Enter the price that you originally purchased the DVD at (as a decimal): ");
                 double dvdPrice = scnr.nextDouble();
+                scnr.nextLine();
                 
                 DVDs.add(new DVD(dvdName, dvdPrice, 1));
                 System.out.println("Thank you for your donation! Your DVD has been added to our DVDs!");
