@@ -27,15 +27,18 @@ public class Main {
         System.out.println("Hello, " + name + ", and welcome to the Bookstore!");
         int userSelection = 0;
         
-        while (userSelection != 4)
+        while (userSelection != 5)
         {
             System.out.println("Please select from the menu below by typing in the corresponding number:");
             System.out.println("\t1. Make a purchase");
             System.out.println("\t2. Join our Membership program");
             System.out.println("\t3. Donate used books, CDs, or DVDs");
-            System.out.println("\t4. Exit");
+            System.out.println("\t4. Display store inventory");
+            System.out.println("\t5. Exit");
 
             userSelection = scnr.nextInt();
+            scnr.nextLine();
+            
             switch (userSelection)
             {
                 case 1:
@@ -48,14 +51,20 @@ public class Main {
                 case 2:
                     System.out.println();
                     store.addMember(name);
+                    
                     System.out.println(store.getMembers());
+                    System.out.println();
                     break;
                 case 3:
                     System.out.println();
                     store.donateItems();
-                    System.out.println(store);
                     break;
                 case 4:
+                    System.out.println();
+                    System.out.println("Here is a list of items we currently have in stock:");
+                    System.out.println(store);
+                    break;
+                case 5:
                     System.exit(0);
                     break;
                 default:
